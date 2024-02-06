@@ -1,0 +1,13 @@
+<h3>Bindings</h3>
+
+<p>La valeur de myProp : {{myProp}}</p>
+<!-- Binding One Way : Lecture seule -->
+
+<input type="text" [(ngModel)]="myProp">
+<!-- Binding Two Ways : Lecture Ecriture -->
+<hr />
+<p>Valeur de number : {{myNumber}}</p>
+<!-- Event Binding (event) -->
+<button (click)="increment()" [disabled]="myNumber >=10">+</button>
+<button (click)="decrement()">-</button>
+<!-- Attribute binding -->

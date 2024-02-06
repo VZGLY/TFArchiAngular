@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { Demo1Component } from './components/demos/demo1/demo1.component';
+import { Demo2Component } from './components/demos/demo2/demo2.component';
+import { Demo3Component } from './components/demos/demo3/demo3.component';
 
 const routes: Routes = [
   { path : "home", component : HomeComponent},
   { path : "about", component : AboutComponent},
-  { path : "demo1", component : Demo1Component}
+  { path : "demo1", component : Demo1Component},
+  { path : "demo2", component : Demo2Component},
+  { path : "demo3", component : Demo3Component}
 ];
 
 @NgModule({
