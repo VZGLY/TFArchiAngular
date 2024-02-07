@@ -1,0 +1,6 @@
+<h3>Service et injection</h3>
+
+<p>Status de connexion : {{status}}</p>
+
+<button (click)="login()" *ngIf="!status">Connexion</button>
+<button (click)="logout()" *ngIf="status">Déconnexion</button>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FakeauthService } from '../../services/fakeauth.service';
 
 @Component({
   selector: 'app-about',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
 
+  status! : boolean
+  constructor(private authService : FakeauthService) {
+    this.status = this.authService.isConnected
+  }
 }
