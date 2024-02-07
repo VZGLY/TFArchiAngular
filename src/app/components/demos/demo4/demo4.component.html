@@ -1,0 +1,68 @@
+<h3>Structural Directives</h3>
+
+<h4>*ngIf (old school)</h4>
+<div style="border : 1px black solid;">
+  <p class="clickable" (click)="switchVisible()">Click ici</p>
+  <div *ngIf="isVisible; else sinon;">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque tenetur facere numquam maxime vero nam commodi, saepe deserunt sequi cum temporibus repudiandae, iste harum dolorum repellendus ipsam rerum, excepturi recusandae!
+  </div>
+  <ng-template #sinon>
+    Toto fait du vélo
+  </ng-template>
+
+</div>
+
+
+<h4>if (angular 17)</h4>
+<div style="border : 1px black solid;">
+  <p class="clickable" (click)="switchVisible()">Click ici</p>
+  @if(isVisible){
+      <div>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque tenetur facere numquam maxime vero nam commodi, saepe deserunt sequi cum temporibus repudiandae, iste harum dolorum repellendus ipsam rerum, excepturi recusandae!
+      </div>
+  }
+  @else {
+    <p>Toto fait du vélo</p>
+  }
+</div>
+<hr />
+
+<h3>*ngFor (old school)</h3>
+<ul>
+  <li *ngFor="let p of maListe; let i = index; let pair = even">
+    <p [class]="pair ? 'pair' : ''">{{i}} - {{p}} <span *ngIf="pair"> * </span></p>
+  </li>
+</ul>
+
+<h3>for (Angular 17)</h3>
+<ul>
+  @for (p of maListe; track $index;) {
+  <li>
+    {{$index}} - {{p}}
+  </li>
+}
+</ul>
+
+<hr />
+<!-- <h3>*ngSwitchCase</h3>
+<input [(ngModel)]="switchValue" type="text"/>
+<div [ngSwitch]="switchValue">
+  <div *ngSwitchCase="switchValue === '1'">Coucou</div>
+  <div *ngSwitchCase="switchValue === '2'">Hello</div>
+  <div *ngSwitchCase="switchValue === '3'">Good Morning</div>
+  <div *ngSwitchDefault>La valeur doit être 1, 2 ou 3</div>
+</div> -->
+
+<h3>*ngSwitchCase</h3>
+<input [(ngModel)]="switchValue" type="number"/>
+@switch (switchValue) {
+  @case(1) {
+    <p>Salut</p>
+  }
+  @case(2) {
+    <p>Aloha</p>
+  }
+  @default {
+    <p>C'est 1 ou 2</p>
+  }
+}

@@ -6,6 +6,7 @@ import { Demo1Component } from './components/demos/demo1/demo1.component';
 import { Demo2Component } from './components/demos/demo2/demo2.component';
 import { Demo3Component } from './components/demos/demo3/demo3.component';
 import { Exo1Component } from './components/exos/exo1/exo1.component';
+import { Demo4Component } from './components/demos/demo4/demo4.component';
 
 const routes: Routes = [
   { path : "home", component : HomeComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path : "demo1", component : Demo1Component},
   { path : "demo2", component : Demo2Component},
   { path : "demo3", component : Demo3Component},
+  { path : "demo4", component : Demo4Component},
   { path : "exo1", component : Exo1Component}
 ];
 

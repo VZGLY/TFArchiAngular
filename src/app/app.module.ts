@@ -13,6 +13,7 @@ import { Demo3Component } from './components/demos/demo3/demo3.component';
 import { EuttobtcPipe } from './components/demos/demo3/euttobtc.pipe';
 import { Exo1Component } from './components/exos/exo1/exo1.component';
 import { TotimePipe } from './components/exos/exo1/totime.pipe';
+import { Demo4Component } from './components/demos/demo4/demo4.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TotimePipe } from './components/exos/exo1/totime.pipe';
     Demo3Component,
     EuttobtcPipe,
     Exo1Component,
-    TotimePipe
+    TotimePipe,
+    Demo4Component
   ],
   imports: [
     BrowserModule,
