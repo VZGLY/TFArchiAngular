@@ -1,0 +1,5 @@
+<h3>Chronomètre</h3>
+<p>Temps écoulé : {{tempsEcoule | totime}}</p>
+<button (click)="start()" [disabled]="monTimer">Start</button> &nbsp;
+<button (click)="pause()" [disabled]="!monTimer">Pause</button> &nbsp;
+<button (click)="reset()" [disabled]="tempsEcoule == 0">Reset</button>

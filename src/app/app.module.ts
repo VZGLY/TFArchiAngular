@@ -11,6 +11,8 @@ import { Demo2Component } from './components/demos/demo2/demo2.component';
 import { FormsModule } from '@angular/forms';
 import { Demo3Component } from './components/demos/demo3/demo3.component';
 import { EuttobtcPipe } from './components/demos/demo3/euttobtc.pipe';
+import { Exo1Component } from './components/exos/exo1/exo1.component';
+import { TotimePipe } from './components/exos/exo1/totime.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { EuttobtcPipe } from './components/demos/demo3/euttobtc.pipe';
     Demo1Component,
     Demo2Component,
     Demo3Component,
-    EuttobtcPipe
+    EuttobtcPipe,
+    Exo1Component,
+    TotimePipe
   ],
   imports: [
     BrowserModule,
