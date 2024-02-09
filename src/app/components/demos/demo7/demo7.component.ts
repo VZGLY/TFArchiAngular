@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-demo7',
@@ -10,26 +10,62 @@ export class Demo7Component implements OnInit {
 
   myGroup! : FormGroup
 
+  email : string | undefined
+
+  myText! : string
+
   constructor(private _formBuilder : FormBuilder) {
 
   }
 
   ngOnInit(): void {
     this.myGroup = this._formBuilder.group({
-      'Email' : [null, [Validators.required]],
-      'Password' : [null, [Validators.required]]
+      'Bonjour' : [null, [this.bonjourValidator()]],
+      'Firstname' : [null, [Validators.required]],
+      'Lastname' : [null, [Validators.required]],
+      'Email' : [null, [Validators.required, Validators.email]],
+      'Password' : [null, [Validators.required]],
+      'Pseudos' : this._formBuilder.array([])
     })
   }
 
-  myText! : string
+  getPseudos() : FormArray{
+    return this.myGroup.get("Pseudos") as FormArray
+  }
+
+  addPseudo() {
+    this.getPseudos().push(new FormControl(null, [Validators.required]))
+    console.log(this.getPseudos().controls);
+
+  }
+
+  removePseudo(i : number){
+    console.log(i);
+
+    this.getPseudos().controls.splice(i, 1)
+  }
 
   resetText(){
     this.myText = "Reseted"
   }
 
-  controlSubmit(){
-    console.log(this.myGroup);
+  groupSubmit(){
 
+    console.log(this.myGroup.value);
+
+    this.email = this.myGroup.value["Email"]
+  }
+
+
+  // Custom Validator
+
+  bonjourValidator(): ValidatorFn | null {
+    return (control: AbstractControl) => {
+      if (control.value == 'Bonjour') {
+        return null;
+      }
+      return {BonjourError : true, ErrorMessage : "Personne impolie"};
+    };
   }
 
 }

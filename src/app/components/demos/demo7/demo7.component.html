@@ -15,15 +15,47 @@
   <h3>Form Group</h3>
 
   <form [formGroup]="myGroup">
+    <p>Dites bonjour</p>
+    <input formControlName="Bonjour">
+
+    @if (!this.myGroup.get('Bonjour')?.valid)
+    {
+      <p>Bonjour invalide</p>
+    }
+
+    <p>Firstname</p>
+    <input formControlName="Firstname">
+    <p>Lastname</p>
+    <input formControlName="Lastname">
     <p>Email</p>
     <input formControlName="Email">
+    @if (!this.myGroup.get('Email')?.valid)
+    {
+      <p>Email invalide</p>
+    }
     <p>Password</p>
-    <input formControlName="Password">
+    <input type="password" formControlName="Password">
+    <div formArrayName="Pseudos">
+      @for (control of getPseudos().controls; track $index;)
+      {
+        <p>{{$index + 1}}</p>
+        <input [formControlName]="$index">
+        <button (click)="removePseudo($index)">DELETE</button>
+      }
+    </div>
+
+
+    <button (click)="addPseudo()">Add Pseudo</button>
   </form>
 
 
 
-  <button (click)="controlSubmit()">Submit</button>
+  <button [disabled]="!this.myGroup.valid" (click)="groupSubmit()">Submit</button>
+
+  @if (email != undefined)
+  {
+    <p>Bienvenu sur le site {{email}}</p>
+  }
 
 </div>
 
