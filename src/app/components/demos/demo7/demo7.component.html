@@ -1,0 +1,30 @@
+<p>Forms</p>
+
+<div>
+  <h3>Two way Binding</h3>
+
+  <input [(ngModel)]="myText">
+
+  <p style="color: chartreuse;">{{myText}}</p>
+
+  <button (click)="resetText()">RESET</button>
+
+</div>
+
+<div>
+  <h3>Form Group</h3>
+
+  <form [formGroup]="myGroup">
+    <p>Email</p>
+    <input formControlName="Email">
+    <p>Password</p>
+    <input formControlName="Password">
+  </form>
+
+
+
+  <button (click)="controlSubmit()">Submit</button>
+
+</div>
+
+

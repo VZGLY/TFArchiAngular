@@ -8,7 +8,7 @@ import { AboutComponent } from './components/about/about.component';
 import { NavComponent } from './components/nav/nav.component';
 import { Demo1Component } from './components/demos/demo1/demo1.component';
 import { Demo2Component } from './components/demos/demo2/demo2.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Demo3Component } from './components/demos/demo3/demo3.component';
 import { EuttobtcPipe } from './components/demos/demo3/euttobtc.pipe';
 import { Exo1Component } from './components/exos/exo1/exo1.component';
@@ -18,6 +18,7 @@ import { Demo5Component } from './components/demos/demo5/demo5.component';
 import { TargetComponent } from './components/demos/demo5/target/target.component';
 import { ErrorComponent } from './components/demos/error/error.component';
 import { Demo6Component } from './components/demos/demo6/demo6.component';
+import { Demo7Component } from './components/demos/demo7/demo7.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +36,14 @@ import { Demo6Component } from './components/demos/demo6/demo6.component';
     Demo5Component,
     TargetComponent,
     ErrorComponent,
-    Demo6Component
+    Demo6Component,
+    Demo7Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

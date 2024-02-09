@@ -12,6 +12,7 @@ import { TargetComponent } from './components/demos/demo5/target/target.componen
 import { ErrorComponent } from './components/demos/error/error.component';
 import { Demo6Component } from './components/demos/demo6/demo6.component';
 import { authGuard } from './guards/auth.guard';
+import { Demo7Component } from './components/demos/demo7/demo7.component';
 
 const routes: Routes = [
   { path : "", redirectTo : "home", pathMatch : "full"},
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path : "demo5", component : Demo5Component},
   { path : "target/:id", component : TargetComponent},
   { path : "demo6", component : Demo6Component},
+  { path : 'demo7', component : Demo7Component},
 
   { path : "exo1", component : Exo1Component},
   { path : "error", component : ErrorComponent},
